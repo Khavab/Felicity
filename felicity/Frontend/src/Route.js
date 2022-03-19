@@ -5,6 +5,7 @@ import Doctor from "./views/Doctor";
 import Patient from "./views/Patient";
 import Videocall from "./views/Videocall";
 import Login from "./views/Login";
+import Registration from "./views/Registration";
 import MHT1 from "./views/MHT/index1";
 import MHT2 from "./views/MHT/index2";
 import MHT3 from "./views/MHT/index3";
@@ -27,7 +28,11 @@ import LoginSubpage from "./views/LoginSubpage";
 
 const ROUTES = [
   { path: "/", key: "ROOT", exact: true, component: () => <Login /> },
+<<<<<<< HEAD
   { path: "/LoginSubpage", key: "video", component: () => <LoginSubpage /> },
+=======
+  { path: "/registeration", key: "ROOT", component: () => <Registration /> },
+>>>>>>> 290851399c289d78bdc54706948a7570513c5b3b
   { path: "/Doctor/videocall", key: "video", component: () => <Videocall isDoctor={true}/> },
   { path: "/Patient/videocall", key: "video", component: () => <Videocall isDoctor={false}/> },
   { path: "/Doctor/Home", key: "video", component: () => <Doctor /> },
