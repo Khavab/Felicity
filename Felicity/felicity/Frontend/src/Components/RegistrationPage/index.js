@@ -22,12 +22,19 @@ import {
   CheckboxWrapper
 } from "./styles";
 
-function Registration({ patientL, doctorL }) {
+import RadioButton from "./Radiobox.js";
+import LogoImg from '../assets/Logo.png';
+import ConsentForm from './consentform.pdf';
+import { BsFillPersonFill } from "react-icons/bs";
+import { HiLockClosed } from "react-icons/hi";
+
+function RegistrationPage({ patientL, doctorL }) {
     const [radioValue, setRadio] = useState(true);
     const [value, setCheckbox] = useState(true);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmedPassword, setConfirmedPassword] = useState("");
 
     return (
         <MainContainer>
@@ -89,13 +96,13 @@ function Registration({ patientL, doctorL }) {
                 </InputBox>
                 <PwInput
                     value={confirmedPassword}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setConfirmedPassword(e.target.value)}
                 />
 
                 <Label> By signing up, you agree to our <TextLink>privacy policy, Telepossible terms.</TextLink></Label>
 
                 <Label> Before signing up, you must agree to our patient consent form:</Label>
-                <iframe src="./consentform.pdf" width="100%" height="500px"></iframe>
+                <iframe src={ConsentForm} width="100%" height="500px"></iframe>
 
                 
                 {radioValue &&
@@ -115,3 +122,5 @@ function Registration({ patientL, doctorL }) {
     )
 
 }
+
+export default RegistrationPage;
